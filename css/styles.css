@@ -216,6 +216,9 @@ p {
 .member-box {
   padding: 30px 0;
 }
+.social-link .social-icon {
+  fill: red;
+}
 /* Герой */
 .hero-title {
   color: var(--white-color);
@@ -235,7 +238,21 @@ p {
   padding-top: 200px;
   text-align: center;
 }
-
+.overlay {
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto; 
+  background-image: linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4) 
+    ), 
+  url(../images/Img-hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 /* Кнопки */
 
 .button.secondary {
