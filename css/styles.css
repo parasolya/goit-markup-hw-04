@@ -10,6 +10,9 @@
   --footer-text-color: rgba(255, 255, 255, 0.6);
   --portfolio-title-color: #212121;
   --portfolio-border-color: #eeeeee;
+  --social-color: #AFB1B8;
+  --bg-icon-feature: #F5F4FA;
+  --bg-icon-footer: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -106,6 +109,7 @@ address {
 .site-nav .link.current {
   color: var(--accent-color);
 }
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -125,7 +129,17 @@ address {
   margin-right: 93px;
 }
 .link.contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: var(--primary-text-color);
+}
+.link.contact:hover,
+.link.contact:focus {
+  color: var(--accent-color);
+}
+.contact-icon {
+  fill: currentColor;
 }
 .nav-contact.header-box-item {
   display: flex;
@@ -162,11 +176,34 @@ p {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-.work.section {
-  padding-top: 0;
+.feature-list-item::before {
+  display: block;
+  content: "";
+  height: 120px;  
+  
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--bg-icon-feature);
+  margin-bottom: 30px;
+}
+.feature-list-item:nth-child(1)::before {
+  background-image: url(../images/icons/antenna.svg);
+}
+.feature-list-item:nth-child(2)::before {
+  background-image: url(../images/icons/clock.svg);
+}
+.feature-list-item:nth-child(3)::before {
+  background-image: url(../images/icons/diagram.svg);
+}
+.feature-list-item:nth-child(4)::before {
+  background-image: url(../images/icons/astronaut.svg);
 }
 
 /* Work */
+.work.section {
+  padding-top: 0;
+}
 .work-box {
   display: flex;
   flex-wrap: wrap;
@@ -179,13 +216,18 @@ p {
   background-color: var(--background-color-button);
 }
 .work .title,
-.team .title {
+.team .title,
+.customers .title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-align: center;
   margin-bottom: 50px;
+}
+.team.section,
+.customers.section {
+  padding-top: 113px;
 }
 .team .member {
   font-weight: 500;
@@ -200,6 +242,7 @@ p {
   line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
+  margin-bottom: 16px;
 }
 .team-box {
   display: flex;
@@ -216,9 +259,56 @@ p {
 .member-box {
   padding: 30px 0;
 }
-.social-link .social-icon {
-  fill: red;
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  background: var(--white-color);
+  color: var(--social-color);
+}
+.social-link:hover,
+.social-link:focus {
+  background-color: #2196f3;
+  color: var(--white-color);
+}
+.social-link .social-icon {
+  fill: currentColor;
+}
+.customers-box {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.customers-list-item {
+  padding: 16px 31px;
+  flex-basis: calc((100% - 150px) / 6);
+  color: var(--social-color);
+  border: 1px solid #AFB1B8;
+  border-radius: 4px;
+  
+}
+.customers-list-item:hover,
+.customers-list-item:focus {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.customers-icon {
+  fill: currentColor;
+}
+
 /* Герой */
 .hero-title {
   color: var(--white-color);
@@ -325,6 +415,39 @@ p {
 .footer-link:focus {
   color: var(--accent-color);
 }
+/* Підвал-Секція соціальних мереж */
+
+.footer-title {
+  color: var(--white-color);
+  margin-bottom: 20px;
+}
+.footer-box {
+  display: flex;
+  gap: 70px;
+  align-items: baseline;
+}
+.footer-social {  
+  width: 206px;
+}
+
+.footer-social .social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--bg-icon-footer);
+  color: var(--white-color);
+}
+.footer-social .social-link:hover,
+.footer-social .social-link:focus {
+  background-color: #2196f3;
+  color: var(--white-color);
+}
+.footer-social .social-link .social-icon {
+  fill: currentColor;
+}
 
 /* Сторінка Портфоліо */
 .portfolio .title {
@@ -361,4 +484,8 @@ p {
 }
 .text-card .title {
   margin-bottom: 4px;
+}
+.portfolio .list-item:hover,
+.portfolio .list-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
